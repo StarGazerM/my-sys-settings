@@ -1,0 +1,32 @@
+<!DOCTYPE HTML5>
+<head>
+  <title>Coq</title>
+  <link href="proof-view.css" rel="stylesheet">
+  <script type="text/javascript" src="../jquery/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    try {
+      eval("[...[1,2]]");
+    } catch(err) {
+      alert("Warning: Coq proof-view requires a browser that supports ECMAScript 6 or higher.");
+    }
+  </script>
+</head>
+<body onload="load()" class="prettifySymbolsMode vscode-dark">
+  <div id="toolbar">
+    <button value="R" onclick="location.reload(true)">Refresh</button>
+    <button title="Toggle prettify-symbols-mode" value="P" id="togglePrettifySymbols" onclick="togglePrettifySymbolsMode()">Prettify</button>
+  </div>
+  <div id="measureTest"></div>
+  <canvas id="textMeasurer" style="display: none"></canvas>
+  <div id="states">
+    <div class="focusedState">
+      <div class="hypotheses"></div>
+      <div class="goal"></div>
+    </div>
+  </div>
+  <div id="error"></div>
+  <div id="messages"></div>
+  <h1><div id="stdout"></div></h1>
+</body>
+<script src="goals.js"></script>

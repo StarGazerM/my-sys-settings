@@ -1,0 +1,54 @@
+[2019-01-29 14:36:01.183] [exthost] [info] extension host started
+[2019-01-29 14:36:01.192] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:36:01.192] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-01-29 14:36:01.194] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:36:01.194] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/emmet/dist/extension
+[2019-01-29 14:36:01.207] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:36:01.207] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/git/dist/main
+[2019-01-29 14:36:01.281] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:36:01.281] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/merge-conflict/dist/extension
+[2019-01-29 14:36:01.286] [exthost] [info] ExtensionService#_doActivateExtension shalldie.background {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:36:01.286] [exthost] [info] ExtensionService#loadCommonJSModule /root/.vscode/extensions/shalldie.background-1.1.19/out/extension
+[2019-01-29 14:36:01.290] [exthost] [info] eager extensions activated
+[2019-01-29 14:36:19.486] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:36:19.486] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/configuration-editing/dist/extension
+[2019-01-29 14:36:19.491] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:36:19.491] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2019-01-29 14:36:19.530] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:36:19.530] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-01-29 14:37:48.147] [exthost] [info] extension host started
+[2019-01-29 14:37:48.165] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:37:48.165] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-01-29 14:37:48.168] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:37:48.168] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/emmet/dist/extension
+[2019-01-29 14:37:48.180] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:37:48.180] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/git/dist/main
+[2019-01-29 14:37:48.256] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:37:48.256] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/merge-conflict/dist/extension
+[2019-01-29 14:37:48.260] [exthost] [info] ExtensionService#_doActivateExtension shalldie.background {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:37:48.260] [exthost] [info] ExtensionService#loadCommonJSModule /root/.vscode/extensions/shalldie.background-1.1.19/out/extension
+[2019-01-29 14:37:48.263] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:37:48.263] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/configuration-editing/dist/extension
+[2019-01-29 14:37:48.269] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:37:48.269] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2019-01-29 14:37:48.315] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:37:48.315] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-01-29 14:37:48.361] [exthost] [info] eager extensions activated
+[2019-01-29 14:38:26.916] [exthost] [info] extension host started
+[2019-01-29 14:38:26.933] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:38:26.933] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-01-29 14:38:26.936] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:38:26.936] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/emmet/dist/extension
+[2019-01-29 14:38:26.948] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:38:26.948] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/git/dist/main
+[2019-01-29 14:38:27.022] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:38:27.022] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/merge-conflict/dist/extension
+[2019-01-29 14:38:27.026] [exthost] [info] ExtensionService#_doActivateExtension shalldie.background {"startup":true,"activationEvent":"*"}
+[2019-01-29 14:38:27.026] [exthost] [info] ExtensionService#loadCommonJSModule /root/.vscode/extensions/shalldie.background-1.1.19/out/extension
+[2019-01-29 14:38:27.029] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:38:27.029] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/configuration-editing/dist/extension
+[2019-01-29 14:38:27.034] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:38:27.034] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2019-01-29 14:38:27.073] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-01-29 14:38:27.073] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-01-29 14:38:27.118] [exthost] [info] eager extensions activated

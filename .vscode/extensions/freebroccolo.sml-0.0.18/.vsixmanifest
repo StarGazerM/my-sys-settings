@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Language="en-US" Id="sml" Version="0.0.18" Publisher="freebroccolo"/>
+    <DisplayName>Standard ML</DisplayName>
+    <Description xml:space="preserve">Standard ML language support</Description>
+    <Tags>snippet,sml,Standard ML,__ext_.fun,__ext_.sig,__ext_.sml,__ext_.cm,__ext_.lex,__ext_.grm</Tags>
+    <Categories>Languages</Categories>
+    <GalleryFlags>Public</GalleryFlags>
+    <Properties>
+      
+        <Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/freebroccolo/vscode-sml.git" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/freebroccolo/vscode-sml.git" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Repository" Value="https://github.com/freebroccolo/vscode-sml.git" />
+      
+      <Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/freebroccolo/vscode-sml/issues" />
+      
+      
+      
+    </Properties>
+    <License>extension/LICENSE.txt</License>
+    
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+  </Installation>
+  <Dependencies/>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+    <Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" />
+  </Assets>
+</PackageManifest>

@@ -1,0 +1,115 @@
+{
+	"private": true,
+	"name": "sml",
+	"displayName": "Standard ML",
+	"description": "Standard ML language support",
+	"version": "0.0.18",
+	"publisher": "freebroccolo",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/freebroccolo/vscode-sml/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/freebroccolo/vscode-sml.git"
+	},
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"activationEvents": [
+		"onLanguage:sml"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "SML configuration",
+			"properties": {
+				"sml.smlnj.make.debounce": {
+					"oneOf": [
+						{
+							"type": "null"
+						},
+						{
+							"type": "number"
+						}
+					],
+					"default": 1000,
+					"description": "How long to idle (in milliseconds) after keypresses before refreshing diagnostics. Smaller values refresh diagnostics more quickly. Set to null to disable."
+				},
+				"sml.smlnj.path": {
+					"type": "string",
+					"default": "sml",
+					"description": "Path to the SML/NJ binary."
+				},
+				"sml.smlnj.args": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "Arguments to pass to the SML/NJ binary."
+				},
+				"sml.ignoreMissingSmlDotJson": {
+					"type": "boolean",
+					"default": false,
+					"description": "Don't prompt about missing sml.json for CM.make."
+				}
+			}
+		},
+		"grammars": [
+			{
+				"language": "sml",
+				"scopeName": "source.sml",
+				"path": "./syntaxes/sml.json"
+			}
+		],
+		"languages": [
+			{
+				"id": "sml",
+				"aliases": [
+					"Standard ML"
+				],
+				"extensions": [
+					".fun",
+					".sig",
+					".sml",
+					".cm",
+					".lex",
+					".grm"
+				],
+				"configuration": "./sml.configuration.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "sml",
+				"path": "./snippets/sml.json"
+			}
+		]
+	},
+	"scripts": {
+		"compile": "tsc -p ./ && script/syntax.js",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"vscode:prepublish": "tsc -p ./ && script/syntax.js"
+	},
+	"devDependencies": {
+		"@types/lodash": "4.14.44",
+		"@types/node": "6.0.54",
+		"tslint": "4.2.0",
+		"typescript": "2.2.0-dev.20161215",
+		"vscode": "1.0.3"
+	},
+	"dependencies": {
+		"lodash": "4.17.3"
+	},
+	"extensionDependencies": [],
+	"__metadata": {
+		"id": "9583bf74-abde-4e12-9df9-a9dd65e5c2ad",
+		"publisherId": "d7d46b7f-d6a6-4bc5-8e41-f35d145c81de",
+		"publisherDisplayName": "Darin Morrison"
+	}
+}

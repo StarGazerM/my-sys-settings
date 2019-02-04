@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "coq.autoRevealProofStateAtCursor": true,
+    "coq.externalViewUrlCommand": "firefox   ${url}",
+    "coq.externalViewScheme": "http"
+}

@@ -1,0 +1,47 @@
+[2019-01-29 14:40:02.165] [renderer1] [info] no standard startup: not the explorer viewlet
+[2019-01-29 14:40:09.401] [renderer1] [error] Cannot read property 'startLineNumber' of null: TypeError: Cannot read property 'startLineNumber' of null
+    at t.getSettingsAtLineNumber (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3992:384)
+    at t.getSettings (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3992:14)
+    at t.render (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3989:609)
+    at t.render (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3980:289)
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:4240:265
+    at <anonymous>
+[2019-01-29 14:40:38.421] [renderer1] [error] Cannot read property 'startLineNumber' of null: TypeError: Cannot read property 'startLineNumber' of null
+    at t.getSettingsAtLineNumber (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3992:384)
+    at t.getSettings (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3992:14)
+    at t.render (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3989:609)
+    at t.render (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3980:289)
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:4240:265
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-01-29 14:40:38.429] [renderer1] [error] Model is disposed!: Error: Model is disposed!
+    at o._assertNotDisposed (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:1236:808)
+    at o.findMatches (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:1248:495)
+    at t.findValueMatches (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3959:667)
+    at e.searchModel.t.filterSettings.o [as valuesMatcher] (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:5848:199)
+    at e._doFindMatchesInSetting (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:5856:689)
+    at e._findMatchesInSetting (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:5854:152)
+    at new e (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:5853:974)
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:5848:152
+    at t.filterSettings (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3957:984)
+    at e.searchModel (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:5848:72)
+    at t._filterOrSearchPreferencesModel (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:4226:912)
+    at t._filterOrSearchPreferences (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:4226:723)
+    at t.filterOrSearchPreferences (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:4224:104)
+    at t.localFilterPreferences (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:4223:917)
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:4217:343
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:221:606
+    at <anonymous>
+[2019-01-29 14:40:38.989] [renderer1] [error] Cannot read property 'endLineNumber' of null: TypeError: Cannot read property 'endLineNumber' of null
+    at t.update (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3967:406)
+    at t.updateResultGroup (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3957:340)
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:4227:316
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-01-29 14:40:43.274] [renderer1] [error] Cannot read property 'startLineNumber' of null: TypeError: Cannot read property 'startLineNumber' of null
+    at t.getSettingsAtLineNumber (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3992:384)
+    at t.getSettings (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3992:14)
+    at t.toggleEditPreferenceWidgetForMouseMove (file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3991:106)
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:3990:539
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/workbench.main.js:221:606
+    at <anonymous>

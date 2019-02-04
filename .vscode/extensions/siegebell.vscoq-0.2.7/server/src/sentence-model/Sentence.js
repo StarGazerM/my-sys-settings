@@ -1,0 +1,195 @@
+"use strict";
+const textUtil = require('../util/text-util');
+const vscode_languageserver_1 = require('vscode-languageserver');
+const parser = require('../parsing/coq-parser');
+const ast = require('../parsing/SentenceSemantics');
+const Scopes_1 = require('./Scopes');
+/*
+every sentence has a scope
+* a basic scope points to a parent scope, which could be a section def, module def, or top of the document
+* a basic scope points to a previous and next siblings (often corresponds to prev/next sentence)
+* some sentences may have private scopes: available only within the sentence
+* some sentences may
+*/
+class Sentence {
+    constructor(text, documentRange, documentOffset, prev, parseSent) {
+        this.text = text;
+        this.documentRange = documentRange;
+        this.documentOffset = documentOffset;
+        this.prev = prev;
+        this.state = undefined;
+        this.next = null;
+        this.scopeDeclaration = null;
+        this.symbols = [];
+        this.scopeDeclaration = Scopes_1.parseAstForScopeDeclarations(parseSent, this, documentRange.start);
+        this.symbols = ast.parseAstForSymbols(parseSent, documentRange.start);
+    }
+    dispose() {
+    }
+    getState() {
+        return this.state;
+    }
+    getScope() {
+        return this.scopeDeclaration;
+    }
+    setState(state) {
+        this.state = state;
+    }
+    getSymbols() {
+        return this.symbols;
+    }
+    getText() {
+        return this.text;
+    }
+    getRange() {
+        return this.documentRange;
+    }
+    getDocumentOffset() {
+        return this.documentOffset;
+    }
+    getDocumentEndOffset() {
+        return this.documentOffset + this.text.length;
+    }
+    /**
+     * @param localOffset -- character offset into this sentence
+     * @return the position w.r.t. the whole document
+     */
+    positionAt(localOffset) {
+        return textUtil.positionAtRelative(this.documentRange.start, this.text, localOffset);
+    }
+    /**
+     * @param position -- position w.r.t. the whole document
+     * @return the offset w.r.t. this sentence, or -1 if the position is not contained by this sentence
+     */
+    offsetAt(position) {
+        return textUtil.relativeOffsetAtAbsolutePosition(this.text, this.documentRange.start, position);
+    }
+    /**
+     * @param line -- the line number (absolute position in the document) to retrieve
+     * @return the corresponding line of text that exists within this sentence.
+     */
+    getLine(line) {
+        if (typeof line === 'number')
+            line = vscode_languageserver_1.Position.create(line, 0);
+        const offset = this.offsetAt(line);
+        if (offset < 0)
+            return null;
+        return this.text.substr(offset).match(/^.*/)[0];
+    }
+    /**
+     * @param position -- position w.r.t. the whole document
+     * @return the offset w.r.t. this sentence, or -1 if the position is not contained by this sentence
+     */
+    documentOffsetAt(position) {
+        return this.documentOffset + textUtil.relativeOffsetAtAbsolutePosition(this.text, this.documentRange.start, position);
+    }
+    contains(position) {
+        return textUtil.rangeContains(this.documentRange, position);
+    }
+    intersects(range) {
+        return textUtil.rangeIntersects(this.documentRange, range);
+    }
+    /** @returns `true` if this sentence appears strictly before `position` */
+    isBefore(position) {
+        return textUtil.positionIsBeforeOrEqual(this.documentRange.end, position);
+    }
+    /** @returns `true` if this sentence appears before or contains `position` */
+    isBeforeOrAt(position) {
+        return textUtil.positionIsBeforeOrEqual(this.documentRange.end, position) || textUtil.positionIsBeforeOrEqual(this.documentRange.start, position);
+    }
+    /** @returns `true` if this sentence appears strictly after `position`. */
+    isAfter(position) {
+        return textUtil.positionIsAfter(this.documentRange.start, position);
+    }
+    /** @returns `true` if this sentence appears after or contains `position`. */
+    isAfterOrAt(position) {
+        return textUtil.positionIsAfterOrEqual(this.documentRange.start, position) ||
+            textUtil.positionIsAfter(this.documentRange.end, position);
+    }
+    /** @returns the position of this sentence relative to `position` */
+    comparePosition(position) {
+        if (textUtil.positionIsBeforeOrEqual(this.documentRange.end, position))
+            return "before";
+        else if (textUtil.positionIsAfter(this.documentRange.start, position))
+            return "after";
+        else
+            return "contains";
+    }
+    // public addSemantics(sem: SentenceSemantics) {
+    //   if(this.semantics) {
+    //     if (this.semantics.every((x) => !x.isEqual(sem)))
+    //       this.semantics.push(sem);
+    //   } else
+    //     this.semantics = [sem];
+    // }
+    // public *getSemantics() : Iterable<SentenceSemantics> {
+    //   if(this.semantics)
+    //     yield* this.semantics;
+    // }
+    toString() {
+        return this.text;
+    }
+    invalidate() {
+        if (this.state)
+            this.state.markInvalid();
+    }
+    /**
+     * Applies the textual changes to the sentence
+     * @return false if the change has invalidated the sentence; true if preserved
+     */
+    applyTextChanges(changes, deltas, updatedDocumentText) {
+        let newText = this.text;
+        let newRange = this.documentRange;
+        let newErrorRange = undefined;
+        let touchesEnd = false; // indicates whether a change has touched the end of this sentence
+        change: for (let idx = 0; idx < changes.length; ++idx) {
+            const change = changes[idx];
+            const delta = deltas[idx];
+            switch (parser.sentenceRangeContainment(newRange, change.range)) {
+                case parser.SentenceRangeContainment.Before:
+                    this.documentOffset += change.text.length - change.rangeLength;
+                    newRange = textUtil.rangeDeltaTranslate(newRange, delta);
+                    if (newErrorRange)
+                        newErrorRange = textUtil.rangeDeltaTranslate(newErrorRange, delta);
+                    continue change;
+                case parser.SentenceRangeContainment.After:
+                    if (textUtil.positionIsEqual(newRange.end, change.range.start))
+                        touchesEnd = true;
+                    continue change; // ignore this change
+                case parser.SentenceRangeContainment.Crosses:
+                    this.invalidate();
+                    return false; // give up; this sentence is toast (invalidated; needs to be cancelled)
+                case parser.SentenceRangeContainment.Contains:
+                    // the change falls within this sentence
+                    const beginOffset = textUtil.relativeOffsetAtAbsolutePosition(newText, newRange.start, change.range.start);
+                    if (beginOffset == -1)
+                        continue change;
+                    newText =
+                        newText.substring(0, beginOffset)
+                            + change.text
+                            + newText.substring(beginOffset + change.rangeLength);
+                    newRange.end = textUtil.positionRangeDeltaTranslateEnd(newRange.end, delta);
+            } // switch
+        } // change: for
+        if (touchesEnd) {
+            // We need to reparse the sentence to make sure the end of the sentence has not changed
+            const endOffset = textUtil.offsetAt(updatedDocumentText, newRange.end);
+            // The problem is if a non-blank [ \r\n] is now contacting the end-period of this sentence; we need only check one more character
+            const newEnd = parser.parseSentenceLength(newText + updatedDocumentText.substr(endOffset, 1));
+            if (newEnd === -1 || newEnd !== newText.length) {
+                this.invalidate();
+                return false; // invalidate: bad or changed syntax
+            }
+        }
+        if (parser.isPassiveDifference(this.text, newText)) {
+            this.text = newText;
+            this.documentRange = newRange;
+            return true;
+        }
+        else
+            this.invalidate();
+        return false;
+    }
+}
+exports.Sentence = Sentence;
+//# sourceMappingURL=Sentence.js.map

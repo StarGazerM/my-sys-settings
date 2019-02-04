@@ -1,0 +1,1 @@
+"C:/Program Files (x86)/Microsoft VS Code/Code.exe" "c:/Users/cj/Research/vscoq/client/out/src/output-process.js"

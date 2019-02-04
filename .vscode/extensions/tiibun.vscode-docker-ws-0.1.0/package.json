@@ -1,0 +1,83 @@
+{
+	"name": "vscode-docker-ws",
+	"version": "0.1.0",
+	"publisher": "tiibun",
+	"displayName": "Docker WorkSpace",
+	"description": "Open Folder in Docker container",
+	"license": "MIT",
+	"icon": "mono-moby.png",
+	"repository": {
+		"url": "https://github.com/tiibun/vscode-docker-ws.git"
+	},
+	"engines": {
+		"vscode": "^1.23.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"docker"
+	],
+	"activationEvents": [
+		"onFileSystem:docker",
+		"onCommand:dockerws:addDockerFolder"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "dockerws:addDockerFolder",
+				"title": "Add Docker Folder To Workspace",
+				"category": "DockerWS"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "dockerws:addDockerFolder",
+					"group": "2_workspace",
+					"when": "workbenchState == workspace"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Docker WorkSpace",
+			"properties": {
+				"dockerWS.host": {
+					"type": "string",
+					"default": "",
+					"description": "Host to connect to (same as setting the DOCKER_HOST environment variable)"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test",
+		"lint": "tslint --project tslint.json"
+	},
+	"devDependencies": {
+		"@types/dockerode": "^2.5.5",
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^8.10.25",
+		"@types/stream-buffers": "^3.0.2",
+		"@types/uuid": "^3.4.4",
+		"eslint": "^5.5.0",
+		"tslint": "^5.8.0",
+		"typescript": "~2.8.0",
+		"vscode": "^1.1.21"
+	},
+	"dependencies": {
+		"dockerode": "^2.5.6",
+		"stream-buffers": "^3.0.2",
+		"uuid": "^3.3.2"
+	},
+	"__metadata": {
+		"id": "98e6476c-a0a7-4710-a832-b4fe2192d846",
+		"publisherId": "a1371569-35c9-497f-bf48-c22a9124b8c5",
+		"publisherDisplayName": "IIBUN Toshiyuki"
+	}
+}

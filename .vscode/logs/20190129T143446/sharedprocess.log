@@ -1,0 +1,47 @@
+[2019-01-29 14:34:50.132] [sharedprocess] [info] main {"machineId":"b18ebafed5e0e8380f975f4e76d57cb0da5c521b65023ceb950f4ab2a26f0dfc"}
+[2019-01-29 14:34:50.174] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:50.252] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:50.297] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:50.316] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:50.362] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:50.600] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:34:50.635] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:34:50.652] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:34:50.666] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:34:52.380] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:52.382] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:52.383] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:52.391] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:34:52.451] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:34:52.454] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:34:52.458] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:05.515] [sharedprocess] [info] Installing extension: background
+[2019-01-29 14:35:05.517] [sharedprocess] [info] Scanned user extensions: 0
+[2019-01-29 14:35:05.635] [sharedprocess] [info] Downloaded extension: background /tmp/f49365e0-4ce2-4639-8548-545cfca322b9
+[2019-01-29 14:35:05.718] [sharedprocess] [info] Extracted extension to /root/.vscode/extensions/.shalldie.background-1.1.19: shalldie.background-1.1.19
+[2019-01-29 14:35:05.720] [sharedprocess] [info] Renamed to /root/.vscode/extensions/shalldie.background-1.1.19
+[2019-01-29 14:35:05.722] [sharedprocess] [info] Installation completed. shalldie.background-1.1.19
+[2019-01-29 14:35:05.739] [sharedprocess] [info] Extensions installed successfully: shalldie.background
+[2019-01-29 14:35:05.858] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:05.906] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:09.480] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:09.483] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:09.483] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:09.487] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:09.488] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:09.543] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:09.545] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:09.548] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:09.551] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:09.655] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:16.414] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:16.417] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:16.419] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:16.428] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:16.430] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:16.507] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:16.509] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:16.512] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:16.516] [sharedprocess] [info] Scanned system extensions: 71
+[2019-01-29 14:35:16.789] [sharedprocess] [info] Scanned user extensions: 1
+[2019-01-29 14:35:30.138] [sharedprocess] [info] Starting to clean up unused language packs.
